@@ -1,0 +1,16 @@
+* {
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 80px;
+}
+
+body {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 20px;
+}
+
