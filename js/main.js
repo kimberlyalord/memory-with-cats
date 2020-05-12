@@ -9,13 +9,13 @@ let playerScore = 0;
 
 
 /*----- cached element references -----*/
-const tiles = Array.from(document.querySelectorAll('.board > div'));
+const tiles = document.querySelectorAll('.board > div');
 
 const messageEl = document.getElementById('message');
 
 
 /*----- event listeners -----*/
-document.getElementById('.board > div')
+document.querySelector('.board')
     .addEventListener('click', handleClick);
 
 document.getElementById('start-button').addEventListener('click', initialize);
@@ -29,8 +29,13 @@ function initialize() {
     playerSequence = [];
 }
 
-function handleClick() {
-    console.log('test');
+function handleClick(e) {
+    console.log('e.target', e.target.parentNode);
+    tiles.forEach(function(tile, index) {
+        if (tile === e.target.parentNode)
+            playerSequence.push(index);
+    })
+    console.log(playerSequence);
     render();
 }
 

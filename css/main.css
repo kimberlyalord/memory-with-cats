@@ -16,15 +16,19 @@ body {
 }
 
 img {
+    max-height: 100px;
+}
+
+.board {
     height: 150px;
     width: 150px;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
-    "first-cat"
-    "fourth-cat" "start-button" "second-cat"
-    "third-cat"
+    ". first-cat ."
+    "fourth-cat start-button second-cat"
+    ". third-cat .";
 }
 
 .board > div {
@@ -34,26 +38,26 @@ img {
 }
 
 #cat-one {
-    grid-area: "first-cat";
+    grid-area: first-cat;
 }
 
 #cat-two {
-    grid-area: "second-cat";
+    grid-area: second-cat;
     transform: rotate(90deg);
 }
 
 #cat-three {
-    grid-area: "third-cat";
+    grid-area: third-cat;
     transform: rotate(180deg);
 }
 
 #cat-four {
-    grid-area: "fourth-cat";
+    grid-area: fourth-cat;
     transform: rotate(270deg);
 }
 
 #start-button {
-    grid-area: "start-button";
+    grid-area: start-button;
     height: 150px;
     width: 150px;
 }
