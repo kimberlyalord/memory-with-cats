@@ -16,12 +16,13 @@ body {
 }
 
 img {
-    max-height: 100px;
+    max-height: 150px;
 }
 
 .board {
     height: 150px;
     width: 150px;
+    margin: 10px;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
@@ -29,12 +30,8 @@ img {
     ". first-cat ."
     "fourth-cat start-button second-cat"
     ". third-cat .";
-}
-
-.board > div {
-    height: 150px;
-    width: 150px;
-    margin: 5px;
+    justify-items: center;
+    align-items: center;
 }
 
 #cat-one {
@@ -60,4 +57,9 @@ img {
     grid-area: start-button;
     height: 150px;
     width: 150px;
+    font-size: 40px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-family: 'Shadows Into Light', cursive;
+    border: 3px solid white;
 }

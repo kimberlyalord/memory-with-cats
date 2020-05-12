@@ -27,18 +27,31 @@ initialize();
 
 function initialize() {
     playerSequence = [];
+    tileSequence = [];
 }
 
 function handleClick(e) {
-    console.log('e.target', e.target.parentNode);
+    // console.log('e.target', e.target.parentNode);
     tiles.forEach(function(tile, index) {
         if (tile === e.target.parentNode)
             playerSequence.push(index);
-    })
-    console.log(playerSequence);
+    });
+    // tiles.style.border = 'white'; 
+    // console.log(playerSequence);
     render();
 }
 
 function render() {
-    console.log(tiles);
+    // console.log(tiles);
+}
+
+// test checkForMatch - currently displays wrong message? 
+tileSequence = [0, 2, 0];
+
+function checkForMatch() {
+    if(playerSequence === tileSequence) {
+        messageEl.innerHTML = `Congratulations! Your current score is ${playerSequence.length}. Click Start to play the next sequence.`;
+    } else {
+        messageEl.innerHTML = `Sorry, you missed it. Your score was ${playerSequence.length - 1}.`;
+    }
 }
