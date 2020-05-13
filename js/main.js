@@ -6,6 +6,7 @@
 let tileSequence = [];
 let playerSequence = [];
 let playerScore = 0;
+let gameOver = -1 //set gameOver to 1 if player loses
 
 
 /*----- cached element references -----*/
@@ -23,12 +24,14 @@ document.getElementById('start-button').addEventListener('click', initialize);
 
 
 /*----- functions -----*/
-initialize(); 
-
 function initialize() {
-    playerSequence = [];
-    tileSequence = [];
-    setTileSequence();
+    if (gameOver === 1) {
+        playerSequence = [];
+        tileSequence = [];
+        setTileSequence();
+    } else if (gameOver === -1) {
+        setTileSequence();
+    }
 }
 
 //test sequence
@@ -43,14 +46,14 @@ function setTileSequence() {
         if(tileSequence.length - 1 === idx) {
             clearInterval(playTileSequence)
         }
-        console.log(tileSequence[idx]);
+        // console.log(tileSequence[idx]);
         if(idx === 0) {
-                document.getElementById('cat-one').style
-                .border = 'thick solid white';
+            document.getElementById('cat-one').style
+            .border = 'thick solid white';
             }
         if(idx === 1) {
-                document.getElementById('cat-two').style
-                .border = 'thick solid white';
+            document.getElementById('cat-two').style
+            .border = 'thick solid white';
             }
         if(idx === 2) {
             document.getElementById('cat-three').style
@@ -60,15 +63,21 @@ function setTileSequence() {
             document.getElementById('cat-four').style
             .border = 'thick solid white';
         }
-        //if statement for each tile to determine which gets a border, then
         // figure out how to remove border from each(or ALL). 
+        setTimeout(function () {
+            document.querySelector('.board > div')
+            .removeAttribute('style')
+        }, 1000);
         idx++
     }, 1000);
 }
 
 function handleClick(e) {
     // console.log('e.target', e.target.parentNode);
-    // tiles.forEach(tile => e.target.style.border = 'thick solid white'); 
+    e.target.style.border = 'thick solid white'
+    setTimeout(function() {
+        e.target.removeAttribute('style')
+    }, 1000); 
     tiles.forEach(function(tile, index) {
         if (tile === e.target.parentNode)
             playerSequence.push(index);
@@ -86,6 +95,7 @@ function checkForMatch() {
     if(JSON.stringify(playerSequence) === JSON.stringify(tileSequence)) {
         messageEl.innerHTML = `Congratulations! Your current score is ${playerSequence.length}. Click Start to play the next sequence.`;
     } else {
-        messageEl.innerHTML = `Sorry, you missed it. Your score was ${playerSequence.length - 1}.`;
+        messageEl.innerHTML = `Sorry, you missed it. Your score was ${playerSequence.length - 1}. Click Start to play a new game.`;
+        gameOver = 1;
     }
 }
