@@ -35,7 +35,7 @@ function initialize() {
 }
 
 //test sequence
-tileSequence = [0, 1, 2, 3];
+// tileSequence = [0, 1, 2, 3];
 
 function setTileSequence() {
     let rand = Math.floor(Math.random() * 4);
@@ -50,24 +50,36 @@ function setTileSequence() {
         if(idx === 0) {
             document.getElementById('cat-one').style
             .border = 'thick solid white';
+            setTimeout(function() {
+                document.getElementById('cat-one').removeAttribute('style')
+            }, 1000);  
             }
         if(idx === 1) {
             document.getElementById('cat-two').style
             .border = 'thick solid white';
+            setTimeout(function() {
+                document.getElementById('cat-two').removeAttribute('style')
+            }, 1000);  
             }
         if(idx === 2) {
             document.getElementById('cat-three').style
             .border = 'thick solid white';
+            setTimeout(function() {
+                document.getElementById('cat-three').removeAttribute('style')
+            }, 1000);  
         }
         if(idx === 3) {
             document.getElementById('cat-four').style
             .border = 'thick solid white';
+            setTimeout(function() {
+                document.getElementById('cat-four').removeAttribute('style')
+            }, 1000);         
         }
-        // figure out how to remove border from each(or ALL). 
-        setTimeout(function () {
-            document.querySelector('.board > div')
-            .removeAttribute('style')
-        }, 1000);
+        // try to get this to work to make code dryer
+        // tiles.forEach(function(setTimeout {
+        //         console.log('test');
+        //         this.removeAttribute('style');
+        //     }, 2000);
         idx++
     }, 1000);
 }
@@ -84,17 +96,13 @@ function handleClick(e) {
     });
     console.log(playerSequence);
     checkForMatch();
-    render();
-}
-
-function render() {
-    // console.log(tiles);
 }
 
 function checkForMatch() {
     if(JSON.stringify(playerSequence) === JSON.stringify(tileSequence)) {
         messageEl.innerHTML = `Congratulations! Your current score is ${playerSequence.length}. Click Start to play the next sequence.`;
     } else {
+        // how to make this not show when the player hasn't clicked yet?
         messageEl.innerHTML = `Sorry, you missed it. Your score was ${playerSequence.length - 1}. Click Start to play a new game.`;
         gameOver = 1;
     }
