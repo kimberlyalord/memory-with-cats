@@ -46,10 +46,12 @@ function initialize() {
 function setTileSequence() {
     // startButton.disabled = true;
     let rand = Math.floor(Math.random() * 4);
+    tileSequence = [1, 1, 1];
     tileSequence.push(rand);
     console.log(tileSequence);
     let idx = 0;
     const playTileSequence = setInterval(function() {
+
         if(tileSequence.length - 1 === idx) {
             clearInterval(playTileSequence)
         }
@@ -88,7 +90,7 @@ function setTileSequence() {
         //         this.removeAttribute('style');
         //     }, 2000);
         idx++
-    }, 1000);
+    }, 2000);
     gameOver = -1;
 }
 

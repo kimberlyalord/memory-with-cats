@@ -24,14 +24,16 @@ img {
     width: 150px;
     margin: 10px;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
     ". first-cat ."
     "fourth-cat start-button second-cat"
-    ". third-cat .";
+    ". third-cat ."
+    "instructions instructions instructions";
     justify-items: center;
     align-items: center;
+    text-align: center;
 }
 
 #cat-one {
@@ -62,4 +64,9 @@ img {
     text-transform: uppercase;
     font-family: 'Shadows Into Light', cursive;
     border: 3px solid white;
+}
+
+#instructions {
+    grid-area: instructions;
+
 }
