@@ -1,12 +1,7 @@
-/*----- constants -----*/
-
-
-
 /*----- app's state (variables) -----*/
 let tileSequence = [];
 let playerSequence = [];
-// let playerScore = 0;
-let gameOver = 1 //set gameOver to 1 if player loses
+let gameOver = 1
 let isMatch;
 
 
@@ -25,64 +20,57 @@ document.querySelector('.board')
 document.getElementById('start-button').addEventListener('click', initialize);
 
 
-
 /*----- functions -----*/
 function initialize() {
     if (gameOver === 1) {
         playerSequence = [];
         tileSequence = [];
         setTileSequence();
-        console.log('other test');
     } else if (gameOver === -1) {
-        if(isMatch) {
+        if (isMatch) {
             setTileSequence();
             playerSequence = [];
             isMatch = false;
         }
-        console.log('test');
     }
 }
 
 function setTileSequence() {
-    // startButton.disabled = true;
     let rand = Math.floor(Math.random() * 4);
-    tileSequence = [1, 1, 1];
     tileSequence.push(rand);
     console.log(tileSequence);
     let idx = 0;
     const playTileSequence = setInterval(function() {
-
         if(tileSequence.length - 1 === idx) {
             clearInterval(playTileSequence)
         }
-        // console.log(tileSequence[idx]);
         if(tileSequence[idx] === 0) {
             document.getElementById('cat-one').style
-            .border = 'thick solid green';
+            .border = 'thick solid white';
             setTimeout(function() {
                 document.getElementById('cat-one').removeAttribute('style')
-            }, 1000);  
+            }, 600);  
             }
         if(tileSequence[idx] === 1) {
             document.getElementById('cat-two').style
-            .border = 'thick solid green';
+            .border = 'thick solid white';
             setTimeout(function() {
                 document.getElementById('cat-two').removeAttribute('style')
-            }, 1000);  
+            }, 600);  
             }
         if(tileSequence[idx] === 2) {
             document.getElementById('cat-three').style
-            .border = 'thick solid green';
+            .border = 'thick solid white';
             setTimeout(function() {
                 document.getElementById('cat-three').removeAttribute('style')
-            }, 1000);  
+            }, 600);  
         }
         if(tileSequence[idx] === 3) {
             document.getElementById('cat-four').style
-            .border = 'thick solid green';
+            .border = 'thick solid white';
             setTimeout(function() {
                 document.getElementById('cat-four').removeAttribute('style')
-            }, 1000);         
+            }, 600);         
         }
         // try to get this to work to make code dryer
         // tiles.forEach(function(setTimeout {
@@ -90,16 +78,15 @@ function setTileSequence() {
         //         this.removeAttribute('style');
         //     }, 2000);
         idx++
-    }, 2000);
+    }, 1000);
     gameOver = -1;
 }
 
 function handleClick(e) {
-    // console.log('e.target', e.target.parentNode);
-    e.target.style.border = 'thick solid green'
+    e.target.style.border = 'thick solid white'
     setTimeout(function() {
         e.target.removeAttribute('style')
-    }, 1000); 
+    }, 500); 
     tiles.forEach(function(tile, index) {
         if (tile === e.target.parentNode)
             playerSequence.push(index);
