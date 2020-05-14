@@ -101,11 +101,9 @@ function handleClick(e) {
     tiles.forEach(function(tile, index) {
         if (tile === e.target.parentNode)
             playerSequence.push(index);
-            // window.localStorage.setItem(tile, index);
     });
     if (playerSequence.length > tileSequence.length) 
         alert('stop');
-    // console.log(playerSequence);
     checkForMatch();
 }
 
