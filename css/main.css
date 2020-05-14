@@ -8,12 +8,25 @@ h1 {
     font-family: 'Dancing Script', cursive;
     font-size: 80px;
     text-shadow: 4px 4px 4px #59138C;
+    margin: 10px 10px;
+    grid-area: title;
+}
+
+h2 {
+    grid-area: subtitle;
 }
 
 body {
     font-family: 'Shadows Into Light', cursive;
     font-size: 20px;
     background-image: url("https://i.imgur.com/Xvo1hGp.jpg");
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 500px 1fr;
+    grid-template-areas:
+    "title title title"
+    ". subtitle ."
+    ". board .";
 }
 
 img {
@@ -24,8 +37,7 @@ img {
 
 .board {
     height: 150px;
-    width: 150px;
-    margin: 10px;
+    grid-area: board;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;

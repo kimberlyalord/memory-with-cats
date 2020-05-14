@@ -18,3 +18,4 @@ To play the game, click [here](https://kimberlyalord.github.io/memory-with-cats/
 
 ## Future Enhancements
 
+Continue to make improvements to styling and 
