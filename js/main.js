@@ -1,26 +1,19 @@
-/*----- app's state (variables) -----*/
 let tileSequence = [];
 let playerSequence = [];
 let gameOver = 1
 let isMatch;
 
-
-/*----- cached element references -----*/
 const tiles = document.querySelectorAll('.board > div');
 
 const messageEl = document.getElementById('message');
 
 const startButton = document.getElementById('start-button');
 
-
-/*----- event listeners -----*/
 document.querySelector('.board')
     .addEventListener('click', handleClick);
 
 document.getElementById('start-button').addEventListener('click', initialize);
 
-
-/*----- functions -----*/
 function initialize() {
     if (gameOver === 1) {
         playerSequence = [];
@@ -72,11 +65,6 @@ function setTileSequence() {
                 document.getElementById('cat-four').removeAttribute('style')
             }, 600);         
         }
-        // try to get this to work to make code dryer
-        // tiles.forEach(function(setTimeout {
-        //         console.log('test');
-        //         this.removeAttribute('style');
-        //     }, 2000);
         idx++
     }, 1000);
     gameOver = -1;
@@ -91,8 +79,6 @@ function handleClick(e) {
         if (tile === e.target.parentNode)
             playerSequence.push(index);
     });
-    if (playerSequence.length > tileSequence.length) 
-        alert('stop');
     checkForMatch();
 }
 
