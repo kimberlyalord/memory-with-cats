@@ -19,11 +19,13 @@ function initialize() {
         playerSequence = [];
         tileSequence = [];
         setTileSequence();
+        document.getElementById('meow').play();
     } else if (gameOver === -1) {
         if (isMatch) {
             setTileSequence();
             playerSequence = [];
             isMatch = false;
+            document.getElementById('meow').play();
         }
     }
 }
@@ -71,7 +73,7 @@ function setTileSequence() {
 }
 
 function handleClick(e) {
-    e.target.style.border = 'thick solid white'
+    e.target.style.border = 'thick solid white';
     setTimeout(function() {
         e.target.removeAttribute('style')
     }, 500); 
@@ -86,10 +88,12 @@ function checkForMatch() {
     if(JSON.stringify(playerSequence) === JSON.stringify(tileSequence)) {
         isMatch = true;
         messageEl.innerHTML = `Congratulations! Your current score is ${playerSequence.length}. Click Start to play the next sequence.`;
+        document.getElementById('purr').play();
     } else if(playerSequence.length < tileSequence.length) {
         messageEl.innerHTML = `Press Start to play the game!`;
     } else {
         messageEl.innerHTML = `Sorry, you missed it. Your score was ${tileSequence.length - 1}. Click Start to play a new game.`;
+        document.getElementById('hiss').play();
         gameOver = 1;
     } 
 }
