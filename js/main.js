@@ -33,7 +33,6 @@ function initialize() {
 function setTileSequence() {
     let rand = Math.floor(Math.random() * 4);
     tileSequence.push(rand);
-    console.log(tileSequence);
     let idx = 0;
     const playTileSequence = setInterval(function() {
         if(tileSequence.length - 1 === idx) {
