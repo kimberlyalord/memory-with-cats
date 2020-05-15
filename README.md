@@ -18,4 +18,11 @@ To play the game, click [here](https://kimberlyalord.github.io/memory-with-cats/
 
 ## Future Enhancements
 
-Continue to make improvements to styling and user experience. I originally envisioned the cats as triangle tiles, so I plan to explore the best way to make that presentation happen. I also plan to add sounds to make the game more exciting. Another feature I would like to implement is a cached storage system for scores, so that a player can play multiple times and see their running high score. 
+Continue to make improvements to styling and user experience. I originally envisioned the cats as triangle tiles, so I plan to explore the best way to make that presentation happen. I would also like to implement a cached storage system for scores, so that a player can play multiple times and see their running high score. 
+
+## Credits
+
+This game utilizes the following sounds from freesound.org:
+[Cat Purr.mp3](https://freesound.org/people/soundmary/sounds/194926/) by soundmary
+[cat meow.wav](https://freesound.org/people/cameronmusic/sounds/138404/) by cameronmusic
+[catHisses.wav](https://freesound.org/people/Zabuhailo/sounds/146960/) by Zabuhailo
