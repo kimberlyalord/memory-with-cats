@@ -89,7 +89,7 @@ function checkForMatch() {
     } else if(playerSequence.length < tileSequence.length) {
         messageEl.innerHTML = `Press Start to play the game!`;
     } else {
-        messageEl.innerHTML = `Sorry, you missed it. Your score was ${playerSequence.length - 1}. Click Start to play a new game.`;
+        messageEl.innerHTML = `Sorry, you missed it. Your score was ${tileSequence.length - 1}. Click Start to play a new game.`;
         gameOver = 1;
     } 
 }
