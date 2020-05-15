@@ -22,7 +22,7 @@ Continue to make improvements to styling and user experience. I originally envis
 
 ## Credits
 
-This game utilizes the following sounds from freesound.org:
-[Cat Purr.mp3](https://freesound.org/people/soundmary/sounds/194926/) by soundmary
-[cat meow.wav](https://freesound.org/people/cameronmusic/sounds/138404/) by cameronmusic
+This game utilizes the following sounds from freesound.org:<br/>
+[Cat Purr.mp3](https://freesound.org/people/soundmary/sounds/194926/) by soundmary<br/>
+[cat meow.wav](https://freesound.org/people/cameronmusic/sounds/138404/) by cameronmusic<br/>
 [catHisses.wav](https://freesound.org/people/Zabuhailo/sounds/146960/) by Zabuhailo
